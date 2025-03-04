@@ -1,24 +1,142 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* 基础颜色系统 */
+  --catppuccin-base: #f8f8f8;
+  --catppuccin-surface0: #ffffff;
+  --catppuccin-surface1: #f3f3f3;
+  --catppuccin-surface2: #e8e8e8;
+  --catppuccin-text: #333333;
+  
+  /* 主题色系统 */
+  --catppuccin-teal: #0d96c6;
+  --catppuccin-green: #3d8c40;
+  --catppuccin-peach: #ea4c89;
+  --catppuccin-pink: #ea4c89;
+  --catppuccin-mauve: #6e5494;
+  --catppuccin-red: #e74c3c;
+  --catppuccin-yellow: #f39c12;
+
+  /* 阴影效果 */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 4px 6px -1px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 8px 16px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.12);
+  --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  /* 动画过渡 */
+  --transition-base: all 0.3s ease-in-out;
+  --transition-fast: all 0.15s ease;
+  --transition-slow: all 0.5s ease;
+
+  /* 圆角 */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* 间距 */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 基础样式 */
+body {
+  background-color: var(--catppuccin-base);
+  color: var(--catppuccin-text);
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 网格布局 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-3);
+  margin: 0 auto;
+}
+
+/* 响应式布局 */
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* 分类部分样式 */
+.category-section {
+  margin-bottom: var(--spacing-8);
+}
+
+.category-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+  color: var(--catppuccin-text);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+}
+
+/* 卡片交互效果 */
+.group:hover .group-hover\:transform {
+  transition: var(--transition-base);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--catppuccin-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--catppuccin-surface2);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 通用动画类 */
+.hover-translate {
+  transition: var(--transition-base);
+}
+
+.hover-translate:hover {
+  transform: translateY(-4px);
+}
+
+.hover-shadow {
+  transition: var(--transition-base);
+}
+
+.hover-shadow:hover {
+  box-shadow: var(--shadow-hover);
 }
