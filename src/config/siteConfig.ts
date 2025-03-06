@@ -20,6 +20,12 @@ export const siteConfig = {
   ],
   categories: [
     {
+      id: 'hot-vps',
+      name: '近期热门',
+      icon: '/icons/fire.svg',
+      description: '近期备受关注的VPS服务商和热门资源'
+    },
+    {
       id: 'free-vps',
       name: '免费VPS&资源',
       icon: '/icons/gift.svg',
@@ -38,11 +44,11 @@ export const siteConfig = {
       description: '价格在1刀1个月以内的性价比商家，今天是灵车，明天就可能是豪车，搏一搏，单车变摩托，别墅看大海。能月付就月付，*没有PayPal付款方式，不要买！！!*'
     },
     {
-        id: 'performance-vps',
-        name: '性能VPS',
-        description: '提供高性能VPS服务的商家，适合对性能要求较高的用户',
-        icon: '/icons/performance.svg'
-      },
+      id: 'performance-vps',
+      name: '性能VPS',
+      description: '提供高性能VPS服务的商家，适合对性能要求较高的用户',
+      icon: '/icons/performance.svg'
+    },
     {
       id: 'vps-tools',
       name: 'VPS工具',
@@ -391,6 +397,81 @@ export const siteConfig = {
           },
         },
       ],
+    },
+    {
+      title: 'Nuyek',
+      description: '新兴VPS服务商',
+      url: 'https://nuyek.com/',
+      categoryId: 'hot-vps',
+      icon: '/icons/nuyek.svg',
+      id: 'nuyek',
+      products: [
+        {
+          cpu: '1 vCPU Core',
+          memory: '1GB DDR4 or Newer',
+          disk: '10GB NVMe',
+          traffic: '4TB',
+          location: '7刀一年 Highland, IL, USA',
+          additional: 'IPv4 Address: 1 Included, IPv6 Address: 1 /56 IPv6 Subnet Included',
+          price: '$7.00 /year',
+          stock: 0,
+          urls: {
+            normal: 'https://nuyek.com/shop/cart/add/40',
+            aff: 'https://nuyek.com/shop/cart/add/40?aff=39'
+          },
+        },
+        {
+          cpu: "1 Ryzen 9950x vCPU Core",
+          memory: "1GB DDR5",
+          disk: "15GB NVMe",
+          traffic: "4TB",
+          location: "9950 11刀一年 Highland, IL, USA",
+          additional: "IPv4 Address: 1 Included, IPv6 Address: 1 /56 IPv6 Subnet Included, Network Port: 1Gbps Shared",
+          price: "$11.00 /year",
+          stock: 1,
+          urls: {
+            normal: "https://nuyek.com/shop/cart/add/50",
+            aff: "https://nuyek.com/shop/cart/add/50?aff=39"
+          }
+        },
+        {
+          cpu: "2 Ryzen 9950x vCPU Cores",
+          memory: "4GB DDR5",
+          disk: "50GB NVMe",
+          traffic: "12TB",
+          location: "9950 24刀一年 Highland, IL, USA",
+          additional: "IPv4 Address: 1 Included, IPv6 Address: 1 /56 IPv6 Subnet Included, Network Port: 1Gbps Shared",
+          price: "$24.00 /year",
+          stock: 1,
+          urls: {
+            normal: "https://nuyek.com/shop/cart/add/52",
+            aff: "https://nuyek.com/shop/cart/add/52?aff=39"
+          }
+        }
+      ],
+    },
+    {
+      title: 'VPS Town',
+      description: '大带宽存储型产品，性价比高',
+      url: 'https://vps.town/',
+      categoryId: 'hot-vps',
+      icon: '/icons/vps-town.svg',
+      id: 'vps-town',
+      products: [
+        {
+          cpu: '2 vCPU Platinum 8160M 2.8Ghz',
+          memory: '2 GiB RAM',
+          disk: '10 GiB U.2 + 1 TiB Raid Z2',
+          traffic: '5 TiB 双向计费',
+          location: '2C2G5T流量1T硬盘 ¥260/年+首年110设置费',
+          additional: 'IPv6支持，10 Gbps DDoS防护，1.5 Gbps共享带宽',
+          price: '¥370元/年',
+          stock: 1,
+          urls: {
+            normal: 'https://vps.town/'
+          }
+        }
+      ]
     },
   ]
 };
