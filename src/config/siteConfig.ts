@@ -200,6 +200,8 @@ export const siteConfig = {
       },
       products: [
         {
+          productName: 'LAX.EB.INTRO 入门版',
+          couponCode: null,
           cpu: '1 vCPU',
           memory: '1 GB RAM',
           disk: '10GB SSD Storage',
@@ -214,6 +216,8 @@ export const siteConfig = {
           }
         },
         {
+          productName: 'LAX.EB.WEE 标准版',
+          couponCode: null,
           cpu: '1 vCPU',
           memory: '1 GB RAM',
           disk: '10GB SSD Storage',
@@ -226,16 +230,50 @@ export const siteConfig = {
             normal: 'https://www.dmit.io/cart.php?pid=188',
             aff: 'https://www.dmit.io/aff.php?aff=10284&pid=188'
           }
+        },
+        {
+          productName: 'Los Angeles CN2GIA',
+          couponCode: null,
+          cpu: '1x AMD',
+          memory: '1024 MB RAM',
+          disk: '20GB SSD RAID-10',
+          traffic: '1000GB/月',
+          location: 'Los Angeles, DC1',
+          additional: '美国 洛杉矶 CN2GIA',
+          price: '$39.00 USD Annually',
+          stock: 1,
+          urls: {
+            normal: 'https://bandwagonhost.com/aff.php?aff=10284&pid=156',
+            aff: 'https://bandwagonhost.com/aff.php?aff=10284&pid=156'
+          }
         }
       ]
     },
     {
       title: 'BandwagonHost',
       description: '搬瓦工，老牌VPS服务商，提供CN2 GIA线路，以及香港、日本等地区的机房，性价比高',
-      url: 'https://bandwagonhost.com/',
-      categoryId: 'optimized-vps',
+      url: 'https://bandwagonhost.com/aff.php?aff=77315',
+      categoryId: 'hot-vps',
       icon: '/icons/bwh.svg',
-      id: 'bandwagonhost'
+      id: 'bandwagonhost',
+      products: [
+        {
+          productName: 'NODESEEK BIGGERBOX PRO',
+          couponCode: 'BWHCGLUKKB',
+          cpu: '1x AMD',
+          memory: '1024 MB RAM',
+          disk: '20GB SSD RAID-10',
+          traffic: '1000GB/月',
+          location: 'NODESEEK-BIGGERBOX-PRO',
+          additional: '回程: 电信CN2，移动联通CMIN2',
+          price: '$39.00 USD Annually',
+          stock: 1,
+          urls: {
+            normal: 'https://bandwagonhost.com/aff.php?pid=156',
+            aff: 'https://bandwagonhost.com/aff.php?aff=77315&pid=156'
+          }
+        }
+      ]
     },
     {
       title: 'Claw Cloud',
@@ -382,6 +420,8 @@ export const siteConfig = {
       id: 'wap',
       products: [
         {
+          productName: '香港经济版',
+          couponCode: null,
           cpu: '1',
           memory: '1g ram',
           disk: '10gb ssd',
@@ -407,6 +447,8 @@ export const siteConfig = {
       id: 'nuyek',
       products: [
         {
+          productName: 'Highland Basic',
+          couponCode: null,
           cpu: '1 vCPU Core',
           memory: '1GB DDR4 or Newer',
           disk: '10GB NVMe',
@@ -421,6 +463,8 @@ export const siteConfig = {
           },
         },
         {
+          productName: "Highland Ryzen 9950x Basic",
+          couponCode: null,
           cpu: "1 Ryzen 9950x vCPU Core",
           memory: "1GB DDR5",
           disk: "15GB NVMe",
@@ -435,6 +479,8 @@ export const siteConfig = {
           }
         },
         {
+          productName: "Highland Ryzen 9950x Pro",
+          couponCode: null,
           cpu: "2 Ryzen 9950x vCPU Cores",
           memory: "4GB DDR5",
           disk: "50GB NVMe",
@@ -459,6 +505,8 @@ export const siteConfig = {
       id: 'vps-town',
       products: [
         {
+          productName: '大带宽存储型',
+          couponCode: null,
           cpu: '2 vCPU Platinum 8160M 2.8Ghz',
           memory: '2 GiB RAM',
           disk: '10 GiB U.2 + 1 TiB Raid Z2',
@@ -486,6 +534,8 @@ export type Category = {
 };
 
 type ProductInfo = {
+  productName?: string;
+  couponCode?: string;
   cpu: string;
   memory: string;
   disk: string;

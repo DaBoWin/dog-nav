@@ -8,6 +8,12 @@ export default function NavCard({ item }: { item: NavItem }) {
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
+  const handleCopyCode = (e: React.MouseEvent, code: string) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(code);
+    alert('优惠码已复制到剪贴板！');
+  };
+
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setTooltipPosition({
@@ -148,6 +154,12 @@ export default function NavCard({ item }: { item: NavItem }) {
               {activeTab === product.location && (
                 <div className="p-3">
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] mb-3">
+                    {product.productName && (
+                      <div className="col-span-2 flex items-center gap-1 mb-1">
+                        <span className="text-gray-500 min-w-[36px]">产品</span>
+                        <span className="font-medium text-[var(--catppuccin-text)]">{product.productName}</span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-1">
                       <span className="text-gray-500 min-w-[36px]">CPU</span>
                       <span>{product.cpu}</span>
@@ -178,6 +190,20 @@ export default function NavCard({ item }: { item: NavItem }) {
                         {product.stock > 0 ? '有货' : '缺货'}
                       </span>
                     </div>
+                    {product.couponCode && (
+                      <div className="col-span-2 flex items-center gap-1 mt-1">
+                        <span className="text-gray-500 min-w-[36px]">优惠</span>
+                        <span 
+                          onClick={(e) => handleCopyCode(e, product.couponCode!)}
+                          className="cursor-pointer inline-flex items-center gap-1 text-[var(--catppuccin-blue)] hover:text-[var(--catppuccin-peach)]"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                          </svg>
+                          {product.couponCode}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex gap-1.5 mt-2">
