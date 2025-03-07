@@ -453,7 +453,7 @@ export const siteConfig = {
     {
       title: 'VPS Town',
       description: '大带宽存储型产品，性价比高',
-      url: 'https://vps.town/',
+      url: 'https://vps.town/aff/IAGDYMBO',
       categoryId: 'hot-vps',
       icon: '/icons/vps-town.svg',
       id: 'vps-town',
@@ -468,7 +468,8 @@ export const siteConfig = {
           price: '¥370元/年',
           stock: 1,
           urls: {
-            normal: 'https://vps.town/'
+            normal: 'https://vps.town/',
+            aff: "https://vps.town/aff/IAGDYMBO"
           }
         }
       ]
