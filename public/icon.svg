@@ -1,4 +1,11 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="80" fill="#0d96c6"/>
-  <text x="50%" y="52%" text-anchor="middle" dominant-baseline="central" font-family="'Arial Black', -apple-system, BlinkMacSystemFont, system-ui, sans-serif" font-size="260" font-weight="900" fill="white" letter-spacing="-20">DOG</text>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#FFA500"/>
+  <path d="M32 46L44 18H36.8L32 27.2L27.2 18H20L32 46Z" 
+        fill="white" 
+        stroke="rgba(0,0,0,0.1)" 
+        stroke-width="2" 
+        stroke-linejoin="round"/>
+  <filter id="shadow">
+    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.2)"/>
+  </filter>
 </svg>
