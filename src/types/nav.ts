@@ -1,4 +1,6 @@
 export interface ProductInfo {
+  productName?: string;
+  couponCode?: string | null;
   cpu: string;
   memory: string;
   disk: string;
