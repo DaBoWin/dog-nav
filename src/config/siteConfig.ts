@@ -230,22 +230,6 @@ export const siteConfig = {
             normal: 'https://www.dmit.io/cart.php?pid=188',
             aff: 'https://www.dmit.io/aff.php?aff=10284&pid=188'
           }
-        },
-        {
-          productName: 'Los Angeles CN2GIA',
-          couponCode: null,
-          cpu: '1x AMD',
-          memory: '1024 MB RAM',
-          disk: '20GB SSD RAID-10',
-          traffic: '1000GB/月',
-          location: 'Los Angeles, DC1',
-          additional: '美国 洛杉矶 CN2GIA',
-          price: '$39.00 USD Annually',
-          stock: 1,
-          urls: {
-            normal: 'https://bandwagonhost.com/aff.php?aff=10284&pid=156',
-            aff: 'https://bandwagonhost.com/aff.php?aff=10284&pid=156'
-          }
         }
       ]
     },
@@ -535,7 +519,7 @@ export type Category = {
 
 type ProductInfo = {
   productName?: string;
-  couponCode?: string;
+  couponCode?: string | null;
   cpu: string;
   memory: string;
   disk: string;
