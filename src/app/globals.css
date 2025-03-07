@@ -11,6 +11,13 @@
   --catppuccin-surface1: #f3f3f3;
   --catppuccin-surface2: #e8e8e8;
   --catppuccin-text: #333333;
+
+  /* 深色模式颜色 */
+  --dark-catppuccin-base: #1a1b26;
+  --dark-catppuccin-surface0: #24283b;
+  --dark-catppuccin-surface1: #2f354d;
+  --dark-catppuccin-surface2: #3b4261;
+  --dark-catppuccin-text: #ffffff;
   
   /* 主题色系统 */
   --catppuccin-teal: #0d96c6;
@@ -47,6 +54,20 @@
   --spacing-4: 1rem;
   --spacing-6: 1.5rem;
   --spacing-8: 2rem;
+}
+
+/* 深色模式样式 */
+[data-theme='dark'] {
+  --catppuccin-base: var(--dark-catppuccin-base);
+  --catppuccin-surface0: var(--dark-catppuccin-surface0);
+  --catppuccin-surface1: var(--dark-catppuccin-surface1);
+  --catppuccin-surface2: var(--dark-catppuccin-surface2);
+  --catppuccin-text: var(--dark-catppuccin-text);
+  --site-title-color: #ffffff;
+}
+
+:root {
+  --site-title-color: #0d0c22;
 }
 
 /* 基础样式 */
