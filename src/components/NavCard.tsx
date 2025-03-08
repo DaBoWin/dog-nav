@@ -125,19 +125,23 @@ export default function NavCard({ item }: { item: NavItem }) {
       {item.products && (
         <div className="mt-3">
           <div className="flex flex-wrap gap-2">
-            {item.products.map((product, index) => (
+            {item.products && item.products.map((product, index) => (
               <button
                 key={index}
-                onClick={() => setActiveTab(activeTab === product.location ? null : product.location)}
+                onClick={() => {
+                  if (product && product.productName) {
+                    setActiveTab(activeTab === product.productName ? null : product.productName);
+                  }
+                }}
                 className={`
                   text-[12px] px-3 py-1.5 rounded-full transition-all
                   font-medium whitespace-nowrap
-                  ${activeTab === product.location 
+                  ${activeTab === product.productName 
                     ? 'bg-[var(--catppuccin-green)] text-white shadow-sm' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}
                 `}
               >
-                {product.location}
+                {product.productName}
               </button>
             ))}
           </div>
@@ -148,84 +152,82 @@ export default function NavCard({ item }: { item: NavItem }) {
               key={index}
               className={`
                 mt-1.5 bg-[var(--catppuccin-surface1)] rounded-lg overflow-hidden transition-all duration-200
-                ${activeTab === product.location ? 'max-h-[500px]' : 'max-h-0'}
+                ${activeTab === product.productName ? 'max-h-[500px] opacity-100 p-3' : 'max-h-0 opacity-0 p-0'}
               `}
             >
-              {activeTab === product.location && (
-                <div className="p-3">
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] mb-3">
-                    {product.productName && (
-                      <div className="col-span-2 flex items-center gap-1 mb-1">
-                        <span className="text-gray-500 min-w-[36px]">产品</span>
-                        <span className="font-medium text-[var(--catppuccin-text)]">{product.productName}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">CPU</span>
-                      <span>{product.cpu}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">内存</span>
-                      <span>{product.memory}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">硬盘</span>
-                      <span>{product.disk}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">流量</span>
-                      <span>{product.traffic}</span>
-                    </div>
-                    <div className="col-span-2 flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">备注</span>
-                      <span className="text-[var(--catppuccin-teal)]">{product.additional}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">价格</span>
-                      <span className="text-[var(--catppuccin-peach)] font-medium">{product.price}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500 min-w-[36px]">库存</span>
-                      <span className={product.stock > 0 ? 'text-[var(--catppuccin-green)]' : 'text-[var(--catppuccin-red)]'}>
-                        {product.stock > 0 ? '有货' : '缺货'}
+              {activeTab === product.productName && (
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[11px] mb-3">
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">CPU</span>
+                    <span>{product.cpu}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">内存</span>
+                    <span>{product.memory}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">硬盘</span>
+                    <span>{product.disk}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">流量</span>
+                    <span>{product.traffic}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">地点</span>
+                    <span>{product.location}</span>
+                  </div>
+                  <div className="col-span-2 flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">备注</span>
+                    <span className="text-[var(--catppuccin-teal)]">{product.additional}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">价格</span>
+                    <span className="text-[var(--catppuccin-peach)] font-medium">{product.price}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-gray-500 min-w-[36px]">库存</span>
+                    <span className={product.stock > 0 ? 'text-[var(--catppuccin-green)]' : 'text-[var(--catppuccin-red)]'}>
+                      {product.stock > 0 ? '有货' : '缺货'}
+                    </span>
+                  </div>
+                  {product.couponCode && (
+                    <div className="col-span-2 flex items-center gap-1 mt-1">
+                      <span className="text-gray-500 min-w-[36px]">优惠</span>
+                      <span 
+                        onClick={(e) => handleCopyCode(e, product.couponCode!)}
+                        className="cursor-pointer inline-flex items-center gap-1 text-[var(--catppuccin-blue)] hover:text-[var(--catppuccin-peach)]"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                        {product.couponCode}
                       </span>
                     </div>
-                    {product.couponCode && (
-                      <div className="col-span-2 flex items-center gap-1 mt-1">
-                        <span className="text-gray-500 min-w-[36px]">优惠</span>
-                        <span 
-                          onClick={(e) => handleCopyCode(e, product.couponCode!)}
-                          className="cursor-pointer inline-flex items-center gap-1 text-[var(--catppuccin-blue)] hover:text-[var(--catppuccin-peach)]"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                          </svg>
-                          {product.couponCode}
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                  )}
+                </div>
+              )}
 
-                  <div className="flex gap-1.5 mt-2">
+              {activeTab === product.productName && (
+                <div className="flex gap-1.5 mt-2">
+                  <a
+                    href={product.urls.normal}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-3 py-1 bg-[var(--catppuccin-green)] text-white rounded-full text-[11px] hover:opacity-90 transition-opacity"
+                  >
+                    直接购买
+                  </a>
+                  {product.urls.aff && (
                     <a
-                      href={product.urls.normal}
+                      href={product.urls.aff}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center px-3 py-1 bg-[var(--catppuccin-green)] text-white rounded-full text-[11px] hover:opacity-90 transition-opacity"
                     >
-                      直接购买
+                      返利购买
                     </a>
-                    {product.urls.aff && (
-                      <a
-                        href={product.urls.aff}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 text-center px-3 py-1 bg-[var(--catppuccin-green)] text-white rounded-full text-[11px] hover:opacity-90 transition-opacity"
-                      >
-                        返利购买
-                      </a>
-                    )}
-                  </div>
+                  )}
                 </div>
               )}
             </div>

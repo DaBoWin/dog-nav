@@ -200,14 +200,14 @@ export const siteConfig = {
       },
       products: [
         {
-          productName: 'LAX.EB.INTRO 入门版',
+          productName: 'LAX.EB.INTRO $29.90 USD Annually',
           couponCode: null,
           cpu: '1 vCPU',
           memory: '1 GB RAM',
           disk: '10GB SSD Storage',
           traffic: '400GB Transfer',
-          location: 'LAX.EB.INTRO',
-          additional: '美国 洛杉矶 9929 cmin2',
+          location: '美国 洛杉矶',
+          additional: '线路 9929 cmin2',
           price: '$29.90 USD Annually',
           stock: 0,
           urls: {
@@ -216,14 +216,14 @@ export const siteConfig = {
           }
         },
         {
-          productName: 'LAX.EB.WEE 标准版',
+          productName: 'LAX.EB.WEE $39.90 USD Annually',
           couponCode: null,
           cpu: '1 vCPU',
           memory: '1 GB RAM',
           disk: '10GB SSD Storage',
           traffic: '800GB Transfer',
-          location: 'LAX.EB.WEE',
-          additional: '美国 LAX 亚洲优化带宽',
+          location: '美国 LAX',
+          additional: '亚洲优化带宽',
           price: '$39.90 USD Annually',
           stock: 1,
           urls: {
@@ -242,13 +242,13 @@ export const siteConfig = {
       id: 'bandwagonhost',
       products: [
         {
-          productName: 'NODESEEK BIGGERBOX PRO',
+          productName: 'NODESEEK BIGGERBOX PRO $39USD Annually',
           couponCode: 'BWHCGLUKKB',
           cpu: '1x AMD',
           memory: '1024 MB RAM',
           disk: '20GB SSD RAID-10',
           traffic: '1000GB/月',
-          location: 'NODESEEK-BIGGERBOX-PRO',
+          location: '洛杉矶',
           additional: '回程: 电信CN2，移动联通CMIN2',
           price: '$39.00 USD Annually',
           stock: 1,
@@ -404,7 +404,7 @@ export const siteConfig = {
       id: 'wap',
       products: [
         {
-          productName: '香港经济版',
+          productName: 'hk lxc',
           couponCode: null,
           cpu: '1',
           memory: '1g ram',
@@ -431,15 +431,15 @@ export const siteConfig = {
       id: 'nuyek',
       products: [
         {
-          productName: 'Highland Basic',
+          productName: 'Highland Basic $7/year',
           couponCode: null,
           cpu: '1 vCPU Core',
           memory: '1GB DDR4 or Newer',
           disk: '10GB NVMe',
           traffic: '4TB',
-          location: '7刀一年 Highland, IL, USA',
+          location: 'Highland, IL, USA',
           additional: 'IPv4 Address: 1 Included, IPv6 Address: 1 /56 IPv6 Subnet Included',
-          price: '$7.00 /year',
+          price: '$7/year',
           stock: 0,
           urls: {
             normal: 'https://nuyek.com/shop/cart/add/40',
@@ -447,15 +447,15 @@ export const siteConfig = {
           },
         },
         {
-          productName: "Highland Ryzen 9950x Basic",
+          productName: "Highland Ryzen 9950x Basic $11/year",
           couponCode: null,
           cpu: "1 Ryzen 9950x vCPU Core",
           memory: "1GB DDR5",
           disk: "15GB NVMe",
           traffic: "4TB",
-          location: "9950 11刀一年 Highland, IL, USA",
+          location: "Highland, IL, USA",
           additional: "IPv4 Address: 1 Included, IPv6 Address: 1 /56 IPv6 Subnet Included, Network Port: 1Gbps Shared",
-          price: "$11.00 /year",
+          price: "$11/year",
           stock: 1,
           urls: {
             normal: "https://nuyek.com/shop/cart/add/50",
@@ -463,15 +463,15 @@ export const siteConfig = {
           }
         },
         {
-          productName: "Highland Ryzen 9950x Pro",
+          productName: "Highland Ryzen 9950x Pro $24/year",
           couponCode: null,
           cpu: "2 Ryzen 9950x vCPU Cores",
           memory: "4GB DDR5",
           disk: "50GB NVMe",
           traffic: "12TB",
-          location: "9950 24刀一年 Highland, IL, USA",
+          location: "Highland, IL, USA",
           additional: "IPv4 Address: 1 Included, IPv6 Address: 1 /56 IPv6 Subnet Included, Network Port: 1Gbps Shared",
-          price: "$24.00 /year",
+          price: "$24/year",
           stock: 1,
           urls: {
             normal: "https://nuyek.com/shop/cart/add/52",
@@ -489,19 +489,77 @@ export const siteConfig = {
       id: 'vps-town',
       products: [
         {
-          productName: '大带宽存储型',
+          productName: '2C2G5T流量1T硬盘 ¥260/年+首年110设置费',
           couponCode: null,
           cpu: '2 vCPU Platinum 8160M 2.8Ghz',
           memory: '2 GiB RAM',
           disk: '10 GiB U.2 + 1 TiB Raid Z2',
           traffic: '5 TiB 双向计费',
-          location: '2C2G5T流量1T硬盘 ¥260/年+首年110设置费',
+          location: 'hk',
           additional: 'IPv6支持，10 Gbps DDoS防护，1.5 Gbps共享带宽',
           price: '¥370元/年',
           stock: 1,
           urls: {
             normal: 'https://vps.town/',
             aff: "https://vps.town/aff/IAGDYMBO"
+          }
+        }
+      ]
+    },
+    {
+      title: 'DeluxHost',
+      description: '新兴VPS服务商，提供高性价比的VPS服务，无限流量',
+      url: 'https://deluxhost.com/',
+      categoryId: 'hot-vps',
+      icon: '/icons/server.svg',
+      id: 'deluxhost',
+      products: [
+        {
+          productName: 'Special offert–OFFERT-1 €7/年',
+          couponCode: null,
+          cpu: '1 vCPU @ E5-2690v4',
+          memory: '1GB RAM',
+          disk: '20GB SSD',
+          traffic: '不限 / 月（1Gbps端口）',
+          location: 'Amsterdam',
+          additional: '支持支付宝付款，KVM虚拟化',
+          price: '€7/年',
+          stock: 1,
+          urls: {
+            normal: 'https://billing.deluxhost.net/aff.php?pid=240&carttpl=lagom2',
+            aff: 'https://billing.deluxhost.net/aff.php?aff=136&pid=240&carttpl=lagom2'
+          }
+        },
+        {
+          productName: 'Special offert–OFFERT-3 €12/年',
+          couponCode: null,
+          cpu: '2 vCPU @ E5-2690v4',
+          memory: '4GB RAM',
+          disk: '60GB SSD',
+          traffic: '不限 / 月（10Gbps端口）',
+          location: 'Amsterdam',
+          additional: '支持支付宝付款，KVM虚拟化',
+          price: '€12/年',
+          stock: 1,
+          urls: {
+            normal: 'https://billing.deluxhost.net/aff.php?pid=242&carttpl=lagom2',
+            aff: 'https://billing.deluxhost.net/aff.php?aff=136&pid=242&carttpl=lagom2'
+          }
+        },
+        {
+          productName: 'Special offert–OFFERT-4 €15/年',
+          couponCode: null,
+          cpu: '2 vCPU @ E5-2690v4',
+          memory: '8GB RAM',
+          disk: '80GB SSD',
+          traffic: '不限 / 月（10Gbps端口）',
+          location: 'Amsterdam',
+          additional: '支持支付宝付款，KVM虚拟化',
+          price: '€15/年',
+          stock: 1,
+          urls: {
+            normal: 'https://billing.deluxhost.net/aff.php?pid=243&carttpl=lagom2',
+            aff: 'https://billing.deluxhost.net/aff.php?aff=136&pid=243&carttpl=lagom2'
           }
         }
       ]

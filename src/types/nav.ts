@@ -1,5 +1,5 @@
 export interface ProductInfo {
-  productName?: string;
+  productName: string;
   couponCode?: string | null;
   cpu: string;
   memory: string;
